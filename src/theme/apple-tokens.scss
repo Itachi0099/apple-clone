@@ -1,0 +1,199 @@
+/* Apple.com Design Tokens */
+
+// Typography
+:root {
+  // Font stacks
+  --apple-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --apple-font-family-mono: 'SF Mono', Monaco, 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
+
+  // Font weights
+  --apple-font-weight-light: 300;
+  --apple-font-weight-regular: 400;
+  --apple-font-weight-medium: 500;
+  --apple-font-weight-semibold: 600;
+  --apple-font-weight-bold: 700;
+
+  // Font sizes
+  --apple-font-xs: 0.75rem;      // 12px
+  --apple-font-sm: 0.875rem;     // 14px
+  --apple-font-base: 1rem;       // 16px
+  --apple-font-lg: 1.125rem;     // 18px
+  --apple-font-xl: 1.25rem;      // 20px
+  --apple-font-2xl: 1.5rem;      // 24px
+  --apple-font-3xl: 1.875rem;    // 30px
+  --apple-font-4xl: 2.25rem;     // 36px
+  --apple-font-5xl: 3rem;        // 48px
+  --apple-font-6xl: 3.75rem;     // 60px
+
+  // Line heights
+  --apple-leading-none: 1;
+  --apple-leading-tight: 1.25;
+  --apple-leading-snug: 1.375;
+  --apple-leading-normal: 1.5;
+  --apple-leading-relaxed: 1.625;
+  --apple-leading-loose: 2;
+
+  // Gray Palette (Apple-inspired)
+  --apple-gray-50: #fafafa;
+  --apple-gray-100: #f5f5f7;
+  --apple-gray-200: #e5e5e7;
+  --apple-gray-300: #d2d2d7;
+  --apple-gray-400: #9ca3af;
+  --apple-gray-500: #6b7280;
+  --apple-gray-600: #515865;
+  --apple-gray-700: #424242;
+  --apple-gray-800: #1d1d1f;
+  --apple-gray-900: #000000;
+
+  // Semantic colors
+  --apple-text-primary: var(--apple-gray-900);
+  --apple-text-secondary: var(--apple-gray-600);
+  --apple-text-tertiary: var(--apple-gray-500);
+  --apple-text-inverse: var(--apple-gray-50);
+
+  --apple-bg-primary: var(--apple-gray-50);
+  --apple-bg-secondary: var(--apple-gray-100);
+  --apple-bg-dark: var(--apple-gray-800);
+  --apple-bg-black: var(--apple-gray-900);
+
+  // Apple Blue
+  --apple-blue-light: #64a5ff;
+  --apple-blue: #007aff;
+  --apple-blue-dark: #0056b3;
+
+  // Spacing scale
+  --apple-space-0: 0;
+  --apple-space-1: 0.25rem;      // 4px
+  --apple-space-2: 0.5rem;       // 8px
+  --apple-space-3: 0.75rem;      // 12px
+  --apple-space-4: 1rem;         // 16px
+  --apple-space-5: 1.25rem;      // 20px
+  --apple-space-6: 1.5rem;       // 24px
+  --apple-space-8: 2rem;         // 32px
+  --apple-space-10: 2.5rem;      // 40px
+  --apple-space-12: 3rem;        // 48px
+  --apple-space-16: 4rem;        // 64px
+  --apple-space-20: 5rem;        // 80px
+  --apple-space-24: 6rem;        // 96px
+  --apple-space-32: 8rem;        // 128px
+
+  // Border radius
+  --apple-radius-sm: 0.125rem;   // 2px
+  --apple-radius: 0.375rem;      // 6px
+  --apple-radius-md: 0.5rem;     // 8px
+  --apple-radius-lg: 0.75rem;    // 12px
+  --apple-radius-xl: 1rem;       // 16px
+  --apple-radius-2xl: 1.5rem;    // 24px
+  --apple-radius-full: 9999px;
+
+  // Shadows
+  --apple-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --apple-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --apple-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --apple-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --apple-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  // Transitions
+  --apple-transition-fast: 150ms ease-out;
+  --apple-transition-base: 300ms ease-out;
+  --apple-transition-slow: 500ms ease-out;
+}
+
+// Utility Classes
+.apple-heading {
+  font-family: var(--apple-font-family);
+  font-weight: var(--apple-font-weight-semibold);
+  line-height: var(--apple-leading-tight);
+  color: var(--apple-text-primary);
+  
+  &.xs { font-size: var(--apple-font-lg); }
+  &.sm { font-size: var(--apple-font-xl); }
+  &.md { font-size: var(--apple-font-2xl); }
+  &.lg { font-size: var(--apple-font-3xl); }
+  &.xl { font-size: var(--apple-font-4xl); }
+  &.xxl { font-size: var(--apple-font-5xl); }
+  &.hero { font-size: var(--apple-font-6xl); }
+}
+
+.apple-text {
+  font-family: var(--apple-font-family);
+  font-weight: var(--apple-font-weight-regular);
+  line-height: var(--apple-leading-normal);
+  
+  &.primary { color: var(--apple-text-primary); }
+  &.secondary { color: var(--apple-text-secondary); }
+  &.tertiary { color: var(--apple-text-tertiary); }
+  &.inverse { color: var(--apple-text-inverse); }
+  
+  &.sm { font-size: var(--apple-font-sm); }
+  &.base { font-size: var(--apple-font-base); }
+  &.lg { font-size: var(--apple-font-lg); }
+}
+
+.apple-cta {
+  font-family: var(--apple-font-family);
+  font-weight: var(--apple-font-weight-medium);
+  text-decoration: none;
+  transition: var(--apple-transition-base);
+  cursor: pointer;
+  
+  &.primary {
+    color: var(--apple-blue);
+    &:hover { color: var(--apple-blue-dark); }
+  }
+  
+  &.secondary {
+    color: var(--apple-text-secondary);
+    &:hover { color: var(--apple-text-primary); }
+  }
+}
+
+// Section backgrounds
+.section-light {
+  background-color: var(--apple-bg-primary);
+  color: var(--apple-text-primary);
+}
+
+.section-secondary {
+  background-color: var(--apple-bg-secondary);
+  color: var(--apple-text-primary);
+}
+
+.section-dark {
+  background-color: var(--apple-bg-dark);
+  color: var(--apple-text-inverse);
+  
+  .apple-heading { color: var(--apple-text-inverse); }
+  .apple-text { color: var(--apple-text-inverse); }
+}
+
+.section-black {
+  background-color: var(--apple-bg-black);
+  color: var(--apple-text-inverse);
+  
+  .apple-heading { color: var(--apple-text-inverse); }
+  .apple-text { color: var(--apple-text-inverse); }
+}
+
+// Container utilities
+.apple-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--apple-space-4);
+  padding-right: var(--apple-space-4);
+  
+  @media (min-width: 768px) {
+    padding-left: var(--apple-space-6);
+    padding-right: var(--apple-space-6);
+  }
+}
+
+.apple-section {
+  padding-top: var(--apple-space-16);
+  padding-bottom: var(--apple-space-16);
+  
+  @media (min-width: 768px) {
+    padding-top: var(--apple-space-20);
+    padding-bottom: var(--apple-space-20);
+  }
+}

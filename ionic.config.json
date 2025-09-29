@@ -1,0 +1,7 @@
+{
+  "name": "apple-clone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
