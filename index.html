@@ -4,19 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apple Showcase</title>
+  
   <script src="https://kit.fontawesome.com/dc760132e5.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
 
 
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-<div class="wrapper">
   <style>
     .text-gradient-silver {
       background: linear-gradient(to right, #999, #e5e5e5);
@@ -28,30 +23,69 @@
   font-weight: 400;
   font-style: normal;
 }
+*{
+  margin:0;
+  box-sizing: 0;
+  outline: none;
+}
+body{
+  overflow-x: hidden;
+}
+
 
   </style>
 </head>
 <body class="bg-black text-white">
 
-  <nav id="navbar" class="w-full flex justify-between items-center p-6 bg-black/70 fixed top-0 left-0 z-50">
-    <h1 class="text-2xl font-bold"><i class="fa-brands fa-apple text-3xl"></i></h1>
-    <ul class="flex gap-6">
-      <li><a href="#iphone-launch" class="hover:text-slate-400">Apple Pay</a></li>
-   
+<nav id="navbar" class="w-full fixed top-0 left-0 z-50 bg-black/70 p-6 flex justify-between items-center">
+  <h1 class="text-2xl font-bold text-white"><i class="fa-brands fa-apple text-3xl"></i></h1>
 
-      <li><a href="#iphone-launch" class="hover:text-slate-400 ">iPhone</a></li>
-      <li><a href="#watch-ultra" class="hover:text-slate-400">Watch Ultra</a></li>
-      <li><a href="#watch-se" class="hover:text-slate-400">Watch SE</a></li>
-    </ul>
-  </nav>
+  <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
 
-  <section class="relative w-full h-screen overflow-hidden mt-16">
-    <iframe 
-      src="https://my.spline.design/liquidglasseffect-omJSHdPQQM19tX3xciZuiVgT-4We/"
-      frameborder="0"
-      class="absolute top-0 left-0 w-full h-full">
-    </iframe>
-  </section>
+  <div id="mobile-menu" class="fixed top-0 right-[-100%] w-full h-full bg-black text-white flex flex-col justify-center items-center space-y-8 transition-all duration-300 md:hidden">
+    <button id="close-btn" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
+
+    <a href="#iphone-launch" class="text-2xl hover:text-slate-400">Apple Pay</a>
+    <a href="#iphone-launch" class="text-2xl hover:text-slate-400">iPhone</a>
+    <a href="#watch-ultra" class="text-2xl hover:text-slate-400">Watch Ultra</a>
+    <a href="#watch-se" class="text-2xl hover:text-slate-400">Watch SE</a>
+    <a href="#login" class="text-2xl hover:text-slate-400">Login</a>
+    <a href="#cart" class="text-2xl hover:text-slate-400"><i class="fa-solid fa-cart-shopping"></i></a>
+  </div>
+
+  <ul class="hidden md:flex gap-6 text-white">
+    <li><a href="#iphone-launch" class="hover:text-slate-400">Apple Pay</a></li>
+    <li><a href="#iphone-launch" class="hover:text-slate-400">iPhone</a></li>
+    <li><a href="#watch-ultra" class="hover:text-slate-400">Watch Ultra</a></li>
+    <li><a href="#watch-se" class="hover:text-slate-400">Watch SE</a></li>
+    <li><a href="#login" class="hover:text-slate-400">Login</a></li>
+    <li><a href="#cart" class="hover:text-slate-400"><i class="fa-solid fa-cart-shopping"></i></a></li>
+  </ul>
+</nav>
+
+<section class="relative w-full h-screen overflow-hidden mt-16">
+  <iframe
+    src="https://my.spline.design/liquidglasseffect-omJSHdPQQM19tX3xciZuiVgT-4We/"
+    frameborder="0"
+    class="absolute top-0 left-0 w-full h-full hidden md:block"
+    loading="lazy">
+  </iframe>
+
+  <img 
+    src="assets/applelogo1.png" 
+    alt="Hero Image" 
+    class="absolute top-[-50px] left-0 w-full h-full object-cover md:hidden">
+
+  <div class="absolute top-[200px] w-full text-center md:hidden px-4">
+    <h1 class="text-4xl font-bold text-white drop-shadow-lg">APPLE</h1>
+    <p class="text-2xl text-white mt-2 drop-shadow-md">BE THE CHANGE</p>
+  </div>
+</section>
+
 
 <section id="iphone-launch" class="relative w-full h-screen flex items-center justify-center text-center text-white overflow-hidden">
 
@@ -62,6 +96,9 @@
     muted
     loop
     playsinline
+
+    preload="none"
+    
   >
     <source src="assets/apple.mp4" type="video/mp4" />
   </video>
@@ -147,25 +184,59 @@
       <img src="assets/6.png" alt="Apple Watch SE 3" class="max-w-full h-auto" />
     </div>
   </section>
+  
 
-  <section id="iphone-launch" class="relative w-full h-screen flex items-center justify-center text-center text-white overflow-hidden">
-  <video id="iphoneVideo" class="absolute top-0 left-0 w-full h-full object-cover z-0 parallax-layer" data-speed="3" autoplay muted loop playsinline>
-    <source src="assets/apple.mp4" type="video/mp4" />
-  </video>
-  <div class="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
-  <div class="relative z-20 max-w-3xl px-4">
-    <h1 id="iphoneTitle" class="text-6xl font-bold mb-4 opacity-0 translate-y-10 parallax-layer" data-speed="6">iPhone Titanium</h1>
-    <p id="iphonePrice" class="text-2xl mb-2 opacity-0 translate-y-10 parallax-layer" data-speed="8">Starting at $1,199</p>
-    <p id="iphoneDate" class="text-lg opacity-0 translate-y-10 parallax-layer" data-speed="10">Launching September 20, 2025</p>
+<section id="ipad-pro" class="relative w-full h-screen overflow-hidden">
+
+<iframe src='https://my.spline.design/interactiveipadpro-Rmdbn4hKbVQ9ltc9MJDoR8EX/' frameborder='0' width='100%' height='100%' class="absolute top-0 left-0 w-full h-full"
+    loading="lazy"></iframe>
+  <div class="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
+
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 text-center px-4">
+    <h2 class="text-5xl font-bold text-white mb-4">iPad Pro</h2>
+    <p class="text-xl text-white/80">Experience creativity like never before</p>
+    <div class="mt-6">
+      <button class="px-6 py-2 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition">Learn More</button>
+      <button class="px-6 py-2 rounded-xl bg-transparent border border-white text-white font-semibold hover:bg-white hover:text-black transition ml-4">Buy Now</button>
+    </div>
   </div>
 </section>
 
 
-  <footer class="w-full bg-black text-slate-400 text-center py-6">
-    <p>© 2025 Apple Inc. All rights reserved.</p>
-  </footer>
+<footer class="bg-black text-gray-300 py-12">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col items-center md:flex-row md:justify-between gap-8 text-center md:text-left">
 
-  <script src="script.js"></script>
+    <div class="flex flex-col space-y-2">
+      <h4 class="text-white font-semibold">Apple</h4>
+      <a href="#">Mac</a>
+      <a href="#">iPad</a>
+      <a href="#">iPhone</a>
+      <a href="#">Watch</a>
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <h4 class="text-white font-semibold">Shop & Learn</h4>
+      <a href="#">Store</a>
+      <a href="#">AirPods</a>
+      <a href="#">TV & Home</a>
+      <a href="#">Entertainment</a>
+    </div>
+
+    <div class="flex flex-col space-y-2">
+      <h4 class="text-white font-semibold">Support</h4>
+      <a href="#">Help Center</a>
+      <a href="#">Warranty</a>
+      <a href="#">Contact Us</a>
+    </div>
+
+  </div>
+
+  <div class="text-center text-gray-500 text-sm mt-10 pt-12">
+    <a appRouter="/flower">&copy; 2025 Apple Inc. All rights reserved.</a>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
-</div>
