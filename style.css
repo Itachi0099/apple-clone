@@ -1,0 +1,21 @@
+.parallax-container {
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.parallax-image {
+  transform: translateZ(-1px) scale(2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
